@@ -49,8 +49,8 @@ class LinearJointVelocity : public LinearConstraint {
   protected:
     LinearJointVelocity (const int nDof)
       : LinearConstraint (0, 0, true, false, true)
-      , m_lower (nDof)
-      , m_upper (nDof)
+      , m_lower (Eigen::VectorXd::Zeros(nDof))
+      , m_upper (Eigen::VectorXd::Zeros(nDof))
       , m_maxsd (1e8)
     {
       check();
